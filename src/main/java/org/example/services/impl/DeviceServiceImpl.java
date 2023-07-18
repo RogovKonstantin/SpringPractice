@@ -36,12 +36,13 @@ public class DeviceServiceImpl implements DeviceService<Integer> {
     }
     @Override
     public List<DeviceDto> findDevicesBySerialNumber(String serialNumber) {
-        return deviceRepository.findAllBySerialNumber(serialNumber).stream().map((d) -> modelMapper.map(d, DeviceDto.class)).collect(Collectors.toList());
+        return deviceRepository.findAllBySerialNumber(serialNumber).stream().map((d) -> modelMapper.map(d, DeviceDto.class))
+                .collect(Collectors.toList());
     }
-
     @Override
     public Integer countDeviceOrdersBySerialNumber(String serialNumber) {
-        return (deviceRepository.findOrderWithDevice(serialNumber).stream().map((d) -> modelMapper.map(d, DeviceDto.class)).collect(Collectors.toList())).size();
+        return (deviceRepository.findOrderWithDevice(serialNumber).stream().map((d) -> modelMapper.map(d, DeviceDto.class))
+                .collect(Collectors.toList())).size();
     }
     @Override
     public void updateDevicePrice(Integer id, BigDecimal newPrice) {
@@ -49,7 +50,6 @@ public class DeviceServiceImpl implements DeviceService<Integer> {
         device.setPrice(newPrice);
         deviceRepository.save(device);
     }
-
     @Override
     public void updateDevicePrice(DeviceDto deviceDto, BigDecimal newPrice) {
         deviceDto.setPrice(newPrice);

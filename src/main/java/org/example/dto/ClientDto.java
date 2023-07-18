@@ -4,16 +4,14 @@ import org.example.models.Client;
 
 public class ClientDto {
     private Integer id;
-
     private String login;
-
     private String phoneNumber;
-
     public ClientDto(Integer id, String login, String phoneNumber) {
         this.id = id;
         this.login = login;
         this.phoneNumber = phoneNumber;
     }
+
     public ClientDto(){}
 
     public Integer getId() {

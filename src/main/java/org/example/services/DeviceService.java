@@ -20,10 +20,12 @@ public interface DeviceService<ID> {
     Integer countDeviceOrdersBySerialNumber(String serialNumber);
 
     void updateDevicePrice(Integer id, BigDecimal newPrice);
+
     void updateDevicePrice(DeviceDto deviceDto, BigDecimal newPrice);
+
     void deleteDevice(ID id);
+
     void deleteDevice(DeviceDto device);
+
     DeviceDto updateDevice(DeviceDto deviceDto);
-
-
 }

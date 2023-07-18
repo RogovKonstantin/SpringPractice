@@ -13,5 +13,4 @@ public interface OrderListService<ID> {
     List<OrderListDto> addDeviceToOrder(Integer orderId, Integer deviceId);
     List<OrderListDto> getAll();
 
-
 }

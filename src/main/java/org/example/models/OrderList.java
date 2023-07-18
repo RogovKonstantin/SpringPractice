@@ -22,6 +22,7 @@ public class OrderList {
     @ManyToOne
     @JoinColumn(name = "deviceId", referencedColumnName = "id")
     @Cascade(org.hibernate.annotations.CascadeType.LOCK)
+
     private Device device;
 
     public Order getOrder() {

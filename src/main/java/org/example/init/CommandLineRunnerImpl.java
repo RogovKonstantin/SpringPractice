@@ -48,33 +48,26 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
     private void seedData() throws IOException {
         // Девайс
-        DeviceDto device1 = deviceService.add(new DeviceDto(0, "Samsung", "S8", "Black", new BigDecimal(19000), "1092"));
-        DeviceDto device2 = deviceService.add(new DeviceDto(0, "Samsung", "S11", "Gray", new BigDecimal(19000), "1093"));
-        DeviceDto device4 = deviceService.add(new DeviceDto(0, "Iphone", "11", "Gray", new BigDecimal(19000), "1"));
-        DeviceDto device3 = deviceService.add(new DeviceDto(0, "Samsung", "S11", "Gray", new BigDecimal(19000), "1093"));
+        DeviceDto device1 = deviceService.add(new DeviceDto(0, "Samsung", "S8", "Black", new BigDecimal(12000), "1092"));
+        DeviceDto device2 = deviceService.add(new DeviceDto(0, "Samsung", "S10", "Gray", new BigDecimal(11000), "109"));
+        DeviceDto device3 = deviceService.add(new DeviceDto(0, "Samsung", "S10", "Gray", new BigDecimal(11000), "109"));
+        DeviceDto device4 = deviceService.add(new DeviceDto(0, "Iphone", "11", "Gray", new BigDecimal(10000), "1442"));
+        DeviceDto device5 = deviceService.add(new DeviceDto(0, "Iphone", "12", "Black", new BigDecimal(29000), "1094"));
         //Клиент
-        ClientDto client1 = clientService.add(new ClientDto(0, "Biill", "+7999"));
+        ClientDto client1 = clientService.add(new ClientDto(0, "Bill", "+7999344"));
         ClientDto client2 = clientService.add(new ClientDto(0, "Tom", "+79996236"));
-        ClientDto client3 = clientService.add(new ClientDto(0, "OHUENNIY_TIP", "+79996236"));
+        ClientDto client3 = clientService.add(new ClientDto(0, "Andrew", "+79996237"));
         //Менеджер
         ManagerDto manager1 = managerService.add(new ManagerDto(0, "Vasya", "Pupkin"));
         ManagerDto manager2 = managerService.add(new ManagerDto(0, "Kolya", "Pupkin"));
-        ManagerDto manager3 = managerService.add(new ManagerDto(0, "Zaman", "Pupkin"));
+        ManagerDto manager3 = managerService.add(new ManagerDto(0, "Sergey", "Pupkin"));
         //Заказы
         OrderDto order1 = orderService.add(new OrderDto(0, 2, 1));
         orderListService.addDeviceToOrder(1,1);
         OrderDto order2 = orderService.add(new OrderDto(0, 2, 2));
         orderListService.addDeviceToOrder(1, 2);
         OrderDto order3 = orderService.add(new OrderDto(0, 1, 2));
-        System.out.println(managerService.findClientsByManagerId(2));
-        System.out.println(managerService.findClientsByManagerId(3));
-        System.out.println(managerService.findClientsByManagerId(1));
-        orderRepository.findAllDevicesByOrder(1).forEach(System.out::println);
-
-
-
-
-
-
+        OrderDto order4 = orderService.add(new OrderDto(0,1,3));
+        orderListService.addDeviceToOrder(3,4);
     }
 }

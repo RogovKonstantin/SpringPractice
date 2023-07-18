@@ -20,12 +20,10 @@ public class Order extends BaseModel {
     @JoinColumn(name = "managerId", referencedColumnName = "id")
     @Cascade(org.hibernate.annotations.CascadeType.LOCK)
     private Manager manager;
-
     @ManyToOne
     @JoinColumn(name = "clientId", referencedColumnName = "id")
     @Cascade(org.hibernate.annotations.CascadeType.LOCK)
     private Client client;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private Set<OrderList> orderLists;
